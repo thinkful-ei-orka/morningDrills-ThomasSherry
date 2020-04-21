@@ -53,3 +53,38 @@ function getAverage(numArray) {
 }
 
 console.log(getAverage([2, 4, 5, 7]));
+
+function createMyObject() {
+    return {
+    //one key called 'foo' => 'bar'
+    foo: 'bar',
+    'answerToUniverse': 42,
+    'olly olly': 'oxen free',
+    sayHello : function() {
+        return 'hello';
+    }
+    //answer to universe => 42
+    //olly olly => 'oxen free'
+    //sayhello() => function that returns hello
+    };
+}
+
+let blah = createMyObject();
+console.log(blah.sayHello());
+//console.log(blah.sayHello());
+
+function updateObject(obj) {
+    //update key/values
+    obj.foo = 'foo';
+    obj.bar = 'bar';
+    obj.bizz = 'bizz';
+    obj.bang = 'bang';
+    //foo = 'foo'
+    //bar = 'bar'
+    //bizz = 'bizz'
+    //bang = 'bang'
+    return obj;
+}
+
+updateObject(blah);
+console.log(blah.foo, blah.bar, blah.bizz, blah.bang);
