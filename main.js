@@ -147,7 +147,10 @@ console.log(makeStudentReport(testData));
 //    course = In Summer School
 
 function enrollInSummerSchool(students) {
-    students.forEach(student => student.status = 'In Summer School');
+    students.forEach(student => {
+        student.status = 'In Summer School';
+        console.log(student);
+    });
     return students;
 }
 
@@ -169,8 +172,9 @@ const studentData = [
     },
 ];
 
-//let roster = enrollInSummerSchool(studentData);
-//console.log(roster);
+let roster = enrollInSummerSchool(studentData);
+console.log('Hi');
+console.log(roster);
 
 let objArr = [{ id: 1, foo: 'bar' },
 { id: 2, foo: 'bizz' }];
