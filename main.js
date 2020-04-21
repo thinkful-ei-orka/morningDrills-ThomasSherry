@@ -88,3 +88,85 @@ function updateObject(obj) {
 
 updateObject(blah);
 console.log(blah.foo, blah.bar, blah.bizz, blah.bang);
+
+function personMaker() {
+    var person = {
+      firstName: 'Paul',
+      lastName: 'Jones',
+      // replace `null` with a function that uses self reference to return
+      // full name using this
+      fullName: function() {
+          return `${this.firstName} ${this.lastName}`}
+    };
+    return person;
+  }
+  
+  let person = personMaker();
+  console.log(person.fullName());
+
+  
+  function keyDeleter(obj) {
+    // delete foo and bar
+    //return obj
+    delete obj.foo;
+    delete obj.bar;
+    return obj;
+  }
+
+  keyDeleter(blah);
+  console.log(blah);
+
+  //makeStudentReport(data)
+  //data = [name, grade]
+  //    let returnArray = [];
+  //    how to split data -> data.forEach(student => returnArray.push(`${student.name}: ${student.grade}`))
+  //    return returnArray;
+  //returns array of strings
+  //name: grade
+
+
+  function makeStudentReport(data) {
+      let returnArray = [];
+      data.forEach(student => returnArray.push(`${student.name}: ${student.grade}`));
+      return returnArray;
+  }
+
+  const testData = [
+    { name: 'Jane Doe', grade: 'A' },
+    { name: 'John Dough', grade: 'B' },
+    { name: 'Jill Do', grade: 'A' },
+  ];
+
+  console.log(makeStudentReport(testData));
+
+  //enroll in summerSchool(students)
+  //students = [{}]
+  //return array of objs
+  //    og name/course
+  //    course = In Summer School
+
+  function enrollInSummerSchool(students) {
+    students.forEach(student => student.status = 'In Summer School');
+    return students;
+  }
+
+  const studentData = [
+    {
+      name: 'Tim',
+      status: 'Current student',
+      course: 'Biology',
+    },
+    {
+      name: 'Sue',
+      status: 'Withdrawn',
+      course: 'Mathematics',
+    },
+    {
+      name: 'Liz',
+      status: 'On leave',
+      course: 'Computer science',
+    },
+  ];
+  
+  let roster = enrollInSummerSchool(studentData);
+  console.log(roster);
