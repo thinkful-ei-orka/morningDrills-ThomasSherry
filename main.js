@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 'use strict';
 
 //max min
@@ -39,3 +40,16 @@ function min(numArray) {
 
 console.log(max([2, 3, 4, 5, 7]));
 console.log(min([4, 3, 67, 2, 1]));
+
+//function takes average
+//let total = 0
+//average.forEach(num => toatl += num)
+//return total / average.length
+
+function getAverage(numArray) {
+    let total = 0;
+    numArray.forEach(num => total += num);
+    return total / numArray.length;
+}
+
+console.log(getAverage([2, 4, 5, 7]));
